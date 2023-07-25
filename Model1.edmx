@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Guapulema_Examen_CrudMvcAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EmployeeActiviry">
+          <Key>
+            <PropertyRef Name="idEmpAct" />
+          </Key>
+          <Property Name="idEmpAct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idEmployee" Type="int" Nullable="false" />
+          <Property Name="employeeName" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="activity" Type="nchar" MaxLength="80" Nullable="false" />
+          <Property Name="start_date" Type="date" />
+          <Property Name="end_date" Type="date" />
+          <Property Name="state" Type="nchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Guapulema_Examen_CrudMvcAPIModelStoreContainer">
+          <EntitySet Name="EmployeeActiviry" EntityType="Self.EmployeeActiviry" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Guapulema_Examen_CrudMvcAPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EmployeeActiviry">
+          <Key>
+            <PropertyRef Name="idEmpAct" />
+          </Key>
+          <Property Name="idEmpAct" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idEmployee" Type="Int32" Nullable="false" />
+          <Property Name="employeeName" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="activity" Type="String" MaxLength="80" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="start_date" Type="DateTime" Precision="0" />
+          <Property Name="end_date" Type="DateTime" Precision="0" />
+          <Property Name="state" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Guapulema_Examen_CrudMvcAPIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EmployeeActiviry" EntityType="Self.EmployeeActiviry" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Guapulema_Examen_CrudMvcAPIModelStoreContainer" CdmEntityContainer="Guapulema_Examen_CrudMvcAPIEntities">
+          <EntitySetMapping Name="EmployeeActiviry">
+            <EntityTypeMapping TypeName="Guapulema_Examen_CrudMvcAPIModel.EmployeeActiviry">
+              <MappingFragment StoreEntitySet="EmployeeActiviry">
+                <ScalarProperty Name="idEmpAct" ColumnName="idEmpAct" />
+                <ScalarProperty Name="idEmployee" ColumnName="idEmployee" />
+                <ScalarProperty Name="employeeName" ColumnName="employeeName" />
+                <ScalarProperty Name="activity" ColumnName="activity" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
